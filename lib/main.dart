@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     //return Container();
     return MaterialApp(
       title: 'Hall Booking',
-      theme: ThemeData(primarySwatch: Colors.cyan),
+      theme: ThemeData(primarySwatch: Colors.indigo),
       home: LandingPage(auth: Auth()),
     );
   }
