@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/app/sign_in/email_sign_in_form.dart';
+import 'package:my_app/app/sign_in/email_sign_in_form_bloc_based.dart';
+import 'package:my_app/app/sign_in/email_sign_in_form_change_notifier.dart';
+import 'package:my_app/app/sign_in/email_sign_in_form_stateful.dart';
 import 'package:my_app/services/auth.dart';
 
 class EmailSignInPage extends StatelessWidget {
-  EmailSignInPage({@required this.auth});
-  final AuthBase auth;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,10 +16,8 @@ class EmailSignInPage extends StatelessWidget {
       body: SingleChildScrollView(
           child: Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Card(
-                  child: EmailSignInForm(
-                auth: auth,
-              )))),
+              child:
+                  Card(child: EmailSignInFormChangeNotifier.create(context)))),
       backgroundColor: Colors.grey[200],
     );
   }
